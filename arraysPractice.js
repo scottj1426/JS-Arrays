@@ -113,7 +113,6 @@ var odds = [];
     return [evens,odds];
   }
 
-
 //Next Problem
 
 
@@ -127,8 +126,8 @@ var getRandomArbitrary = function() {
 
   //Code Here
 function finder(numbers){
-  getRandomArbitrary(numbers);
-  for(var i = 0; i < numbers.length){
+  return arr.filter(function ()){
+    return cur % 2 === 0;
   }
 
 }
