@@ -119,16 +119,20 @@ var odds = [];
 var getRandomArbitrary = function() {
   return Math.floor(Math.random() * 30);
 };
-// var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
+var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above you're given a function that will return a random number between 0 and 30.  There is also a commented out array full of numbers to help you visualize what your function will be receiving.
 
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
 function finder(numbers){
-  return arr.filter(function ()){
-    return cur % 2 === 0;
+  var lol = getRandomArbitrary();
+  for(var i =0; i < numbers.length;i++){
+    if(lol === numbers[i]){
+      return true;
+    }
   }
+  return false;
 
 }
 
@@ -154,6 +158,19 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
   //Code Here
+  function removeItem(myGroceryList,item){
+    if(myGroceryList.includes(item)){
+      myGroceryList.splice(myGroceryList.indexOf(item),1);
+    }
+    return myGroceryList;
+  }
+
+
+  function addItem(myGroceryList,Item){
+    myGroceryList.push(Item);
+    return myGroceryList;
+  }
+
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -168,6 +185,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
   //Code Here
 
+  function maker(){
+    var arr = [];
+  for(var i =1; i <= 215;i++){
+    arr.push(i);
+  }
+  return arr;
+  }
+
 
 
 //Next Problem
@@ -178,6 +203,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
+  function addTen(numbers){
+    for(var i =0; i < numbers.length;i++){
+      numbers[i] = parseInt(numbers[i]);
+      numbers[i] +=10;
+    }
+    return numbers;
+    }
+
 
 
 
@@ -199,6 +232,15 @@ for(var i = 0; i < num2; i++){
 //Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
   //Code Here
+  function longer(ar1,ar2){
+    if(ar1.length < ar2.length){
+      return ar2;
+    }
+    else{
+      return ar1;
+    }
+  }
+
 
 
 /*
@@ -212,6 +254,18 @@ Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
   //Code Here
+  var nArr = [];
+  function both(ar1,ar2){
+    for(var i =0; i < ar1.length;i++){
+      for (var j = 0; j < ar2.length; j++) {
+        if(ar1[i] === ar2[j]){
+          nArr.push(ar2[j]);
+        }
+      }
+    }
+return nArr;
+}
+
 
 
 
@@ -221,7 +275,7 @@ Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 
 
 
-var devMountainEmployees = [];
+var devMountainEmployees = ['James','is','coool'];
 
 var tyler = {
     name: 'Tyler',
@@ -271,6 +325,7 @@ of Data is to have an Array full of objects. */
 
   //Code Here
 
+
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
 
@@ -281,8 +336,32 @@ var user1 = {
     password: 'iLoveJavaScript',
     username: 'infiniateLoop'
 };
+var user2 = {
+    name: 'James Scott',
+    email: 'goodatcode@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniateLoop'
+};
+var user3 = {
+    name: 'Jon Snow',
+    email: 'imalive@gmail.com',
+    password: 'iLoveDanerys',
+    username: 'infiniateWalkers'
+};
+var user4 = {
+    name: 'James Stewart',
+    email: 'sevenMx@gmail.com',
+    password: 'iLoveMx',
+    username: 'infiniateDirt'
+};
 
 //Your Code Here
+var users =[];
+users.push(user1);
+users.push(user2);
+users.push(user3);
+users.push(user4);
+
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -293,5 +372,9 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular index he's located in, delete him from the array.*/
 
   //Code Here
-
+  for(var i =0; i < users.length;i++){
+      if(users[i].email === 'tylermcginnis33@gmail.com'){
+        users.splice(i,1);
+      }
+  }
 //The activity we just did is very much how data works in 'the real world'.
